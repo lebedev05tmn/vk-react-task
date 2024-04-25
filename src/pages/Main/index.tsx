@@ -15,6 +15,9 @@ const MainPage: FC = () => {
     }
   );
 
+  if (page === 2) {
+    setPage(3);
+  }
   return (
     data &&
     data.map(film => (
