@@ -1,0 +1,1 @@
+export { getDetails } from "./getDetails";

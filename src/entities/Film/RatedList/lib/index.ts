@@ -1,0 +1,1 @@
+export { getRatedList } from "./getRatedList";
