@@ -1,7 +1,11 @@
 @import "../../styles/variables.scss";
 
 .Link {
+  width: 100%;
   color: $baseFontColor;
   text-decoration: none;
-  width: 20%;
+  > img {
+    width: 100%;
+    border-radius: 20px;
+  }
 }

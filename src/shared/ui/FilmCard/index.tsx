@@ -1,16 +1,9 @@
 import { FC, PropsWithChildren } from "react";
 import { Link } from "react-router-dom";
-import styles from "./film.module.scss";
+import { IFilmCard } from "../../interfaces";
+import styles from "./film-card.module.scss";
 
-interface IProps {
-  image: string | undefined;
-  path: string;
-  title: string;
-  rating: number;
-  date: string;
-}
-
-const FilmCard: FC<PropsWithChildren<IProps>> = ({
+const FilmCard: FC<PropsWithChildren<IFilmCard>> = ({
   image,
   path,
   title,

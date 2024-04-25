@@ -1,4 +1,5 @@
 import { AxiosRequestConfig } from "axios";
+import { ReactElement } from "react";
 
 export interface IHeaders extends AxiosRequestConfig {
   headers: {
@@ -26,4 +27,18 @@ export interface IFilmData {
   video: boolean;
   vote_average: number;
   vote_count: number;
+}
+
+export interface IFilmCard {
+  image: string | undefined;
+  path: string;
+  title: string;
+  rating: number;
+  date: string;
+}
+
+export interface IRoute {
+  key: string;
+  path: string;
+  element: ReactElement;
 }

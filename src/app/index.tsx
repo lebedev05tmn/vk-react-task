@@ -2,6 +2,7 @@ import { FC } from "react";
 import { withQueryClient } from "./providers/withQueryClient";
 import { Routing } from "pages";
 import { queryClient } from "shared";
+import "@fontsource/montserrat";
 import "./styles/global.scss";
 
 const App: FC = () => {

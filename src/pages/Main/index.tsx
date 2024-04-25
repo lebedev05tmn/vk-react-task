@@ -1,34 +1,16 @@
-import { FC, useState } from "react";
-import { getRatedList } from "../../entities";
-import { getImageUrl, ImagesType } from "../../shared";
-import { useQuery } from "react-query";
-import { IFilmData, FilmCard } from "../../shared";
+import { FC } from "react";
+import { Layout } from "widgets";
+import { RatedList } from "entities/Film/RatedList/ui";
+import { FilmList } from "shared/ui";
 
 const MainPage: FC = () => {
-  const [page, setPage] = useState(1);
-  const { data } = useQuery<IFilmData[]>(
-    ["rated-films", page],
-    () => getRatedList(page),
-    {
-      keepPreviousData: true,
-      refetchOnWindowFocus: false,
-    }
-  );
-
-  if (page === 2) {
-    setPage(3);
-  }
+  const page = 1;
   return (
-    data &&
-    data.map(film => (
-      <FilmCard
-        image={getImageUrl(film, ImagesType.POSTER)}
-        path={"/film/" + film.id}
-        title={film.title}
-        date={film.release_date}
-        rating={film.vote_average}
-      />
-    ))
+    <Layout>
+      <FilmList>
+        <RatedList page={page} />
+      </FilmList>
+    </Layout>
   );
 };
 

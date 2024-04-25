@@ -1,33 +1,13 @@
 import { FC } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { MainPage } from "./Main";
-import { DetailsPage } from "./Details";
-import { NotFoundPage } from "./NotFound";
-import { AppRoute } from "shared";
-
-const routes = [
-  {
-    path: AppRoute.HOME,
-    element: <MainPage />,
-    key: "main_page",
-  },
-  {
-    path: AppRoute.DETAILS + ":id",
-    element: <DetailsPage />,
-    key: "details_page",
-  },
-  {
-    path: AppRoute.NOT_FOUND,
-    element: <NotFoundPage />,
-    key: "404_page",
-  },
-];
+import { routes } from "./config";
+import { IRoute } from "shared";
 
 const Routing: FC = () => {
   return (
     <Router>
       <Routes>
-        {routes.map(props => (
+        {routes.map((props: IRoute) => (
           <Route {...props} />
         ))}
       </Routes>

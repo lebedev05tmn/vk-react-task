@@ -1,7 +1,8 @@
 import { FC } from "react";
+import { Layout } from "widgets";
 
 const DetailsPage: FC = () => {
-  return <div></div>;
+  return <Layout></Layout>;
 };
 
 export { DetailsPage };
