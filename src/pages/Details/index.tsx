@@ -1,8 +1,12 @@
 import { FC } from "react";
-import { Layout } from "widgets";
+import { Layout, DetailsWithData } from "widgets";
 
 const DetailsPage: FC = () => {
-  return <Layout></Layout>;
+  return (
+    <Layout>
+      <DetailsWithData />
+    </Layout>
+  );
 };
 
 export { DetailsPage };

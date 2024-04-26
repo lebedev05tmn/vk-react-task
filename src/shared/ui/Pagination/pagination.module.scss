@@ -1,0 +1,13 @@
+.pagination {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  width: 100%;
+  justify-content: center;
+
+  > li > button:hover,
+  > li > button:focus {
+    opacity: 0.7;
+  }
+  margin-bottom: 100px;
+}

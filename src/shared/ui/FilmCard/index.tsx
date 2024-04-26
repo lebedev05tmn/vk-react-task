@@ -14,9 +14,12 @@ const FilmCard: FC<PropsWithChildren<IFilmCard>> = ({
     image && (
       <Link to={path} className={styles.Link}>
         <img src={image} alt="poster" />
-        <p>{title}</p>
-        <p>{rating}</p>
-        <p>{date}</p>
+
+        <div className={styles.info}>
+          <span className={styles.rating}>{rating}</span>
+          <span>{title}</span>
+          <span className={styles.date}>{date}</span>
+        </div>
       </Link>
     )
   );

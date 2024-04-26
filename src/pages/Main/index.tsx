@@ -1,15 +1,11 @@
 import { FC } from "react";
 import { Layout } from "widgets";
-import { RatedList } from "entities/Film/RatedList/ui";
-import { FilmList } from "shared/ui";
+import { MainList } from "widgets/MainList";
 
 const MainPage: FC = () => {
-  const page = 1;
   return (
     <Layout>
-      <FilmList>
-        <RatedList page={page} />
-      </FilmList>
+      <MainList />
     </Layout>
   );
 };

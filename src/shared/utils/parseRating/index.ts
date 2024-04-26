@@ -1,2 +1,2 @@
 export const parseRating = (rating: number): number =>
-  Number(rating.toString().slice(0, 4));
+  parseFloat(rating.toFixed(1));

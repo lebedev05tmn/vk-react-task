@@ -1,5 +1,5 @@
 import { AxiosRequestConfig } from "axios";
-import { ReactElement } from "react";
+import { ReactElement, Dispatch, SetStateAction } from "react";
 
 export interface IHeaders extends AxiosRequestConfig {
   headers: {
@@ -41,4 +41,12 @@ export interface IRoute {
   key: string;
   path: string;
   element: ReactElement;
+}
+
+export interface IPagination {
+  setPage: Dispatch<SetStateAction<number>>;
+  page: number;
+  onStartClick?: () => void;
+  onEndClick?: () => void;
+  count?: number;
 }
