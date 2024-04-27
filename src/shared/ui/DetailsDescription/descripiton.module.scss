@@ -1,0 +1,14 @@
+.article {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+
+  > p {
+    font-size: 12px;
+  }
+  span {
+    text-transform: uppercase;
+    font-size: 14px;
+  }
+}

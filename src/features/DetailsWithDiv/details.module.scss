@@ -1,0 +1,25 @@
+@import "../../shared/styles/variables.scss";
+
+.block {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 20px;
+
+  > img {
+    width: 100%;
+  }
+
+  width: 100%;
+  @media screen and (min-width: $tabletWidth) {
+    width: $tabletWidth - 10px;
+  }
+
+  @media screen and (min-width: $laptopWidth) {
+    width: $laptopWidth - 10px;
+    flex-direction: row;
+  }
+
+  @media screen and (min-width: $desktopWidth) {
+    width: $desktopWidth - 10px;
+  }
+}

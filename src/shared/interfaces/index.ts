@@ -12,8 +12,7 @@ export interface IConst {
   [key: string]: string;
 }
 
-export interface IFilmData {
-  id: number;
+export interface IFilmData extends IPropsWithId {
   adult: boolean;
   backdrop_path: string;
   genre_ids: number[];
@@ -33,8 +32,9 @@ export interface IFilmCard {
   image: string | undefined;
   path: string;
   title: string;
-  rating: number;
-  date: string;
+  rating?: number;
+  date?: string;
+  onClick?: Dispatch<SetStateAction<boolean>>;
 }
 
 export interface IRoute {
@@ -49,4 +49,30 @@ export interface IPagination {
   onStartClick?: () => void;
   onEndClick?: () => void;
   count?: number;
+}
+
+export interface IPropsWithId {
+  id: number;
+}
+
+export interface IGenre extends IPropsWithId {
+  name: string;
+}
+
+export interface IPropsWithPage {
+  page: number;
+}
+
+export interface IDetailsListProps extends IPropsWithId {
+  setStatus: Dispatch<SetStateAction<boolean>>;
+}
+
+export interface IDetailsCard {
+  rating: number;
+  title: string;
+  description: string;
+  popularity: number;
+  runtime: number;
+  date: string;
+  genres: IGenre[];
 }

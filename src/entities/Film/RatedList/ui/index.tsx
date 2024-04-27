@@ -8,13 +8,10 @@ import {
   ImagesType,
   parseDate,
   parseRating,
+  IPropsWithPage,
 } from "shared";
 
-interface IProps {
-  page: number;
-}
-
-const RatedList: FC<IProps> = ({ page }) => {
+const RatedList: FC<IPropsWithPage> = ({ page }) => {
   const { data, isSuccess } = useQuery<IFilmData[]>(
     ["rated-films", page],
     () => getRatedList(page),
@@ -33,7 +30,7 @@ const RatedList: FC<IProps> = ({ page }) => {
             path={"/film/" + film.id}
             title={film.title}
             date={parseDate(film.release_date)}
-            rating={parseRating(film.vote_average)}
+            rating={parseRating(film.vote_average, 1)}
             key={film.id}
           />
         ))}

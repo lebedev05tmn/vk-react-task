@@ -1,10 +1,9 @@
-import { FC } from "react";
-import { useParams } from "react-router-dom";
-import { Details } from "entities";
+import { FC, PropsWithChildren } from "react";
+import { DetailsWithDiv } from "features";
+import { IPropsWithId } from "shared/interfaces";
 
-const DetailsWithData: FC = () => {
-  const { id } = useParams();
-  return id && <Details id={Number(id)} />;
+const DetailsWithData: FC<PropsWithChildren<IPropsWithId>> = ({ id }) => {
+  return <DetailsWithDiv id={id} />;
 };
 
 export { DetailsWithData };

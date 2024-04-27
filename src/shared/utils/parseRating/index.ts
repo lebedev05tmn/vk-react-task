@@ -1,2 +1,2 @@
-export const parseRating = (rating: number): number =>
-  parseFloat(rating.toFixed(1));
+export const parseRating = (rating: number, fixed: number): number =>
+  parseFloat(rating.toFixed(fixed));

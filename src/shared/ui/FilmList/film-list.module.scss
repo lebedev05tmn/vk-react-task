@@ -12,11 +12,17 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    width: 758px;
+    width: ($tabletWidth - 10px);
   }
+
+  @media screen and (min-width: $laptopWidth) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    width: ($laptopWidth - 10px);
+  }
+
   @media screen and (min-width: $desktopWidth) {
     grid-template-columns: repeat(5, 1fr);
-    gap: 30px;
-    width: 1014px;
+    width: ($desktopWidth - 10px);
   }
 }

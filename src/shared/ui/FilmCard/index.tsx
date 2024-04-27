@@ -1,6 +1,7 @@
 import { FC, PropsWithChildren } from "react";
 import { Link } from "react-router-dom";
 import { IFilmCard } from "../../interfaces";
+import { parseTitle } from "../../utils";
 import styles from "./film-card.module.scss";
 
 const FilmCard: FC<PropsWithChildren<IFilmCard>> = ({
@@ -16,9 +17,9 @@ const FilmCard: FC<PropsWithChildren<IFilmCard>> = ({
         <img src={image} alt="poster" />
 
         <div className={styles.info}>
-          <span className={styles.rating}>{rating}</span>
-          <span>{title}</span>
-          <span className={styles.date}>{date}</span>
+          {rating && <span className={styles.rating}>{rating}</span>}
+          <span>{parseTitle(title)}</span>
+          {date && <span className={styles.date}>{date}</span>}
         </div>
       </Link>
     )

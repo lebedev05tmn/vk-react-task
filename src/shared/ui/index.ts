@@ -5,3 +5,4 @@ export * from "./FilmList";
 export * from "./NotFoundText";
 export * from "./Pagination";
 export * from "./Button";
+export * from "./DetailsDescription";

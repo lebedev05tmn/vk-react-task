@@ -1,7 +1,7 @@
 @import "../../styles/variables.scss";
 
 .Link {
-  width: 100%;
+  width: 280px;
   color: $baseFontColor;
   text-decoration: none;
   border-radius: 20px;
@@ -11,6 +11,10 @@
     width: 100%;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+  }
+
+  @media screen and (min-width: $tabletWidth) {
+    width: 100%;
   }
 }
 
