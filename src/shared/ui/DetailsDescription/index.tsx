@@ -2,6 +2,7 @@ import { FC, PropsWithChildren } from "react";
 import { parseRating, parseDate, IDetailsCard, IGenre } from "shared";
 import styles from "./descripiton.module.scss";
 
+// Компонент с описанием фильма
 const DetailsDescription: FC<PropsWithChildren<IDetailsCard>> = ({
   rating,
   title,

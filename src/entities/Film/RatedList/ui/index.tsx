@@ -11,6 +11,8 @@ import {
   IPropsWithPage,
 } from "shared";
 
+// Компонент, отображающий список лучших фильмов
+
 const RatedList: FC<IPropsWithPage> = ({ page }) => {
   const { data, isSuccess } = useQuery<IFilmData[]>(
     ["rated-films", page],

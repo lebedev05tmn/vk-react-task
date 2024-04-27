@@ -1,28 +1,39 @@
 import { FC, useEffect, useState } from "react";
-import { Layout, DetailsWithData } from "widgets";
+import { Layout } from "widgets";
+import { Recommendations, DetailsWithDiv } from "features";
 import { useParams } from "react-router-dom";
-import { Recommendations } from "features";
+
+// Страница фильма
 
 const DetailsPage: FC = () => {
+  // Забираем id из URL
   const { id } = useParams();
+
+  // Идентификатор для перерендера страницы
   const [idetntifier, setIdentifier] = useState<undefined | string>(undefined);
 
   useEffect(() => {
     document.title = `Фильм ${id}`;
+
+    // Изменение состояния
     if (id !== idetntifier) {
       setIdentifier(id);
     }
-  }, [id]);
+  }, [id, idetntifier]);
 
-  if (id !== idetntifier) {
+  // Реализация загрузки данных
+  if (id !== idetntifier || !idetntifier) {
     return "Loading...";
   }
+
+  // Форматирование индетификатора
+  const idFormatted: number = parseInt(idetntifier!);
 
   return (
     idetntifier && (
       <Layout>
-        <DetailsWithData id={Number(idetntifier)} />
-        <Recommendations id={Number(idetntifier)} />
+        <DetailsWithDiv id={idFormatted} />
+        <Recommendations id={idFormatted} />
       </Layout>
     )
   );

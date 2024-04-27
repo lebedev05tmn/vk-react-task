@@ -2,11 +2,11 @@ import { FC } from "react";
 import { Link } from "react-router-dom";
 import styles from "./header.module.scss";
 
-interface IHeader {
-  path: string;
-}
+// Компонент Шапки
 
-const Header: FC<IHeader> = () => {
+const Header: FC = () => {
+  // Перелинкация не на AppRoute ради полного переиспользоавания компонента
+
   return (
     <header className={styles.header}>
       <Link to="/" className={styles.title}>

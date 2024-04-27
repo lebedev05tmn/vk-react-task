@@ -1,13 +1,18 @@
-import { FC } from "react";
+import { FC, memo } from "react";
 import { FilmList, IPropsWithPage } from "shared";
 import { RatedList } from "entities";
 
-const FilmRatedList: FC<IPropsWithPage> = ({ page }) => {
-  return (
-    <FilmList>
-      <RatedList page={page} />
-    </FilmList>
-  );
-};
+// Фича, формирующая компонент списка лучших фильмов
+
+const FilmRatedList: FC<IPropsWithPage> = memo(
+  ({ page }) => {
+    return (
+      <FilmList>
+        <RatedList page={page} />
+      </FilmList>
+    );
+  },
+  (prev, next) => prev.page === next.page
+);
 
 export { FilmRatedList };

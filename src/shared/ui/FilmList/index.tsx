@@ -1,13 +1,9 @@
 import { FC, PropsWithChildren } from "react";
 import styles from "./film-list.module.scss";
 
+// Компонент списка лучших фильмов
 const FilmList: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <>
-      <h2>Лучшие фильмы</h2>
-      <ul className={styles.list}>{children}</ul>
-    </>
-  );
+  return <ul className={styles.list}>{children}</ul>;
 };
 
 export { FilmList };

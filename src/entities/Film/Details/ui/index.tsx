@@ -6,10 +6,16 @@ import {
   ImagesType,
   getImageUrl,
   IPropsWithId,
+  IDetailsData,
 } from "shared";
 
+// Компонент отображающий данные о фильме
+
 const Details: FC<IPropsWithId> = ({ id }) => {
-  const { data, isSuccess } = useQuery<any>("details", () => getDetails(id));
+  const { data, isSuccess } = useQuery<IDetailsData>("details", () =>
+    getDetails(id)
+  );
+
   return (
     isSuccess && (
       <>

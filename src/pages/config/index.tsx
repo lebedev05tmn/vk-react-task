@@ -3,6 +3,8 @@ import { DetailsPage } from "../Details";
 import { NotFoundPage } from "../NotFound";
 import { AppRoute, IRoute } from "shared";
 
+// Конфиг для роутов приложения
+
 export const routes: IRoute[] = [
   {
     path: AppRoute.HOME,

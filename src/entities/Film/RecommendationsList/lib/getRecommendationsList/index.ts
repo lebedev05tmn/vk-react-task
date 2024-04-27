@@ -1,7 +1,11 @@
 import { api } from "../../api";
-import { API_LOCALE } from "shared";
+import { API_LOCALE, IFilmData } from "shared";
 
-export const getRecommendationsList = async (id: number): Promise<any[]> => {
+// Функция для получения списка похожих фильмов
+
+export const getRecommendationsList = async (
+  id: number
+): Promise<IFilmData[]> => {
   const { data } = await api.get(`/${id}/recommendations?${API_LOCALE}`);
   return await data.results;
 };

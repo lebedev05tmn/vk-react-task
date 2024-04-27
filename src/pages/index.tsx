@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { routes } from "./config";
 import { IRoute } from "shared";
 
+// Формирование роутера
 const Routing: FC = () => {
   return (
     <Router>

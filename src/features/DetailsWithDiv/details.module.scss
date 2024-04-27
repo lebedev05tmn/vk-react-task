@@ -1,4 +1,5 @@
 @import "../../shared/styles/variables.scss";
+@import "../../shared/styles/mixin.scss";
 
 .block {
   display: flex;
@@ -10,16 +11,10 @@
   }
 
   width: 100%;
-  @media screen and (min-width: $tabletWidth) {
-    width: $tabletWidth - 10px;
-  }
+
+  @include adaptiveWidth;
 
   @media screen and (min-width: $laptopWidth) {
-    width: $laptopWidth - 10px;
     flex-direction: row;
-  }
-
-  @media screen and (min-width: $desktopWidth) {
-    width: $desktopWidth - 10px;
   }
 }

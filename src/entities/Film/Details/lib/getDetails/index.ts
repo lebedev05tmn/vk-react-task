@@ -1,7 +1,9 @@
 import { api } from "../../api";
-import { API_LOCALE } from "shared";
+import { API_LOCALE, IDetailsData } from "shared";
 
-export const getDetails = async (id: number): Promise<any[]> => {
+// Функция для получения  данных фильма
+
+export const getDetails = async (id: number): Promise<IDetailsData> => {
   const { data } = await api.get(`/${id}?${API_LOCALE}`);
   return await data;
 };

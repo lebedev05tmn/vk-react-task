@@ -1,0 +1,15 @@
+@import "./variables.scss";
+
+@mixin adaptiveWidth {
+  @media screen and (min-width: $tabletWidth) {
+    width: $tabletWidth - 10px;
+  }
+
+  @media screen and (min-width: $laptopWidth) {
+    width: $laptopWidth - 10px;
+  }
+
+  @media screen and (min-width: $desktopWidth) {
+    width: $desktopWidth - 10px;
+  }
+}

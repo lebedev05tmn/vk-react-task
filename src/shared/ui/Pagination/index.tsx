@@ -3,6 +3,7 @@ import { Button } from "../Button";
 import { IPagination } from "shared";
 import styles from "./pagination.module.scss";
 
+// Компонент пагинации 5 страниц с переходом
 const Pagination: FC<PropsWithChildren<IPagination>> = ({
   setPage,
   page,

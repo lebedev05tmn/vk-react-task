@@ -1,11 +1,8 @@
 import { FC, PropsWithChildren } from "react";
+import { IButton } from "../../interfaces";
 import styles from "./button.module.scss";
 
-interface IButton {
-  onClick?: () => void;
-  isActive?: boolean;
-}
-
+// Компонент кнопки
 const Button: FC<PropsWithChildren<IButton>> = ({
   children,
   onClick,
