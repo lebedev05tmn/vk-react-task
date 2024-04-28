@@ -44,7 +44,7 @@ export interface IRoute {
 }
 
 export interface IPage {
-  setPage: Dispatch<SetStateAction<number>>;
+  setPage?: Dispatch<SetStateAction<number>>;
   page: number;
   onStartClick?: () => void;
   onEndClick?: () => void;
