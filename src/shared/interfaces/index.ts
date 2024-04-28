@@ -43,7 +43,7 @@ export interface IRoute {
   element: ReactElement;
 }
 
-export interface IPagination {
+export interface IPage {
   setPage: Dispatch<SetStateAction<number>>;
   page: number;
   onStartClick?: () => void;
@@ -57,10 +57,6 @@ export interface IPropsWithId {
 
 export interface IGenre extends IPropsWithId {
   name: string;
-}
-
-export interface IPropsWithPage {
-  page: number;
 }
 
 export interface IDetailsData extends IPropsWithId {

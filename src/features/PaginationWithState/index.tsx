@@ -1,9 +1,9 @@
 import { FC, useState, useCallback } from "react";
 import { handleCount, handlePage } from "./lib";
-import { Pagination, IPagination } from "shared";
+import { Pagination, IPage } from "shared";
 
 // Фича для обработки пагинации
-const PaginationWithState: FC<IPagination> = ({ page, setPage }) => {
+const PaginationWithState: FC<IPage> = ({ page, setPage }) => {
   //Данные подтягиваются из Локального хранилища
 
   const [count, setCount] = useState(
@@ -20,21 +20,23 @@ const PaginationWithState: FC<IPagination> = ({ page, setPage }) => {
   );
 
   return (
-    <Pagination
-      setPage={setPage}
-      page={page}
-      onStartClick={() => {
-        handleSetPage(1);
-        handleSetCount(1);
-      }}
-      onEndClick={() => {
-        handleSetPage(page + 1);
-        if (page % 5 === 0) {
-          handleSetCount(page + 5);
-        }
-      }}
-      count={count}
-    />
+    page !== -1 && (
+      <Pagination
+        setPage={setPage}
+        page={page}
+        onStartClick={() => {
+          handleSetPage(1);
+          handleSetCount(1);
+        }}
+        onEndClick={() => {
+          handleSetPage(page + 1);
+          if (page % 5 === 0) {
+            handleSetCount(page + 5);
+          }
+        }}
+        count={count}
+      />
+    )
   );
 };
 

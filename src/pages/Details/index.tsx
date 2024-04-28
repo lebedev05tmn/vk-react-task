@@ -23,7 +23,7 @@ const DetailsPage: FC = () => {
 
   // Реализация загрузки данных
   if (id !== idetntifier || !idetntifier) {
-    return "Loading...";
+    return "Загрузка...";
   }
 
   // Форматирование индетификатора

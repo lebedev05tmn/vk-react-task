@@ -8,13 +8,13 @@ import {
   ImagesType,
   parseDate,
   parseRating,
-  IPropsWithPage,
+  IPage,
 } from "shared";
 
 // Компонент, отображающий список лучших фильмов
 
-const RatedList: FC<IPropsWithPage> = ({ page }) => {
-  const { data, isSuccess } = useQuery<IFilmData[]>(
+const RatedList: FC<IPage> = ({ page }) => {
+  const { data, isSuccess, isError, isLoading } = useQuery<IFilmData[]>(
     ["rated-films", page],
     () => getRatedList(page),
     {
@@ -22,6 +22,13 @@ const RatedList: FC<IPropsWithPage> = ({ page }) => {
       refetchOnWindowFocus: false,
     }
   );
+
+  if (isLoading) {
+    return "Загрузка...";
+  }
+  if (isError) {
+    return "Ошибка, нет данных";
+  }
 
   return (
     <>

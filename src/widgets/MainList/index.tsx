@@ -11,7 +11,7 @@ const MainList: FC = memo(() => {
   );
   return (
     <>
-      <FilmRatedList page={page} />
+      <FilmRatedList page={page} setPage={setPage} />
       <PaginationWithState setPage={setPage} page={page} />
     </>
   );
