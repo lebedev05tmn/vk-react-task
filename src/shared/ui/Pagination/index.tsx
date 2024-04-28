@@ -21,7 +21,7 @@ const Pagination: FC<PropsWithChildren<IPage>> = ({
             <Button
               key={"pagination-" + index}
               isActive={page % 5 === (index + 1) % 5}
-              onClick={() => setPage(count! + index)}>
+              onClick={() => setPage!(count! + index)}>
               {count! + index}
             </Button>
           );
