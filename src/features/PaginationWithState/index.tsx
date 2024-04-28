@@ -15,7 +15,7 @@ const PaginationWithState: FC<IPage> = ({ page, setPage }) => {
     []
   );
   const handleSetPage = useCallback(
-    (page: number) => handlePage(page, setPage),
+    (page: number) => handlePage(page, setPage!),
     [setPage]
   );
 
