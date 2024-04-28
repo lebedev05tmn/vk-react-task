@@ -1,10 +1,10 @@
 import { FC, memo } from "react";
-import { FilmList, IPropsWithPage } from "shared";
+import { FilmList, IPage } from "shared";
 import { RatedList } from "entities";
 
 // Фича, формирующая компонент списка лучших фильмов
 
-const FilmRatedList: FC<IPropsWithPage> = memo(
+const FilmRatedList: FC<IPage> = memo(
   ({ page }) => {
     return (
       <FilmList>
