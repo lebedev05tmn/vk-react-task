@@ -1,14 +1,14 @@
 import { FC, memo } from "react";
-import { FilmList, IPage } from "shared";
-import { RatedList } from "entities";
+import { FilmList } from "shared";
+import { RatedList, IRatedListProps } from "entities";
 
 // Фича, формирующая компонент списка лучших фильмов
 
-const FilmRatedList: FC<IPage> = memo(
-  ({ page }) => {
+const FilmRatedList: FC<IRatedListProps> = memo(
+  ({ page, setIsLoad }) => {
     return (
       <FilmList>
-        <RatedList page={page} />
+        <RatedList page={page} setIsLoad={setIsLoad} />
       </FilmList>
     );
   },

@@ -9,10 +9,11 @@ const MainList: FC = memo(() => {
   const [page, setPage] = useState(
     JSON.parse(localStorage.getItem("page") || "1")
   );
+  const [isLoad, setIsLoad] = useState(false);
   return (
     <>
-      <FilmRatedList page={page} setPage={setPage} />
-      <PaginationWithState setPage={setPage} page={page} />
+      <FilmRatedList page={page} setPage={setPage} setIsLoad={setIsLoad} />
+      <PaginationWithState setPage={setPage} page={page} isLoad={isLoad} />
     </>
   );
 });

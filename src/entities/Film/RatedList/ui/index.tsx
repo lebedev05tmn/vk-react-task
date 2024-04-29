@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, Dispatch, SetStateAction, useEffect } from "react";
 import { useQuery } from "react-query";
 import { getRatedList } from "../lib";
 import {
@@ -11,9 +11,13 @@ import {
   IPage,
 } from "shared";
 
+export interface IRatedListProps extends IPage {
+  setIsLoad: Dispatch<SetStateAction<boolean>>;
+}
+
 // Компонент, отображающий список лучших фильмов
 
-const RatedList: FC<IPage> = ({ page }) => {
+const RatedList: FC<IRatedListProps> = ({ page, setIsLoad }) => {
   const { data, isSuccess, isError, isLoading } = useQuery<IFilmData[]>(
     ["rated-films", page],
     () => getRatedList(page),
@@ -22,6 +26,10 @@ const RatedList: FC<IPage> = ({ page }) => {
       refetchOnWindowFocus: false,
     }
   );
+
+  useEffect(() => {
+    if (isSuccess) setIsLoad(true);
+  }, [isSuccess]);
 
   if (isLoading) {
     return "Загрузка...";

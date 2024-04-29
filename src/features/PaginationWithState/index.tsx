@@ -2,8 +2,16 @@ import { FC, useState, useCallback } from "react";
 import { handleCount, handlePage } from "./lib";
 import { Pagination, IPage } from "shared";
 
+interface IPaginationProps extends IPage {
+  isLoad: boolean;
+}
+
 // Фича для обработки пагинации
-const PaginationWithState: FC<IPage> = ({ page, setPage }) => {
+const PaginationWithState: FC<IPaginationProps> = ({
+  page,
+  setPage,
+  isLoad,
+}) => {
   //Данные подтягиваются из Локального хранилища
 
   const [count, setCount] = useState(
@@ -20,6 +28,7 @@ const PaginationWithState: FC<IPage> = ({ page, setPage }) => {
   );
 
   return (
+    isLoad &&
     page !== -1 && (
       <Pagination
         setPage={setPage}
